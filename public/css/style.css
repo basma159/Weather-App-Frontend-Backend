@@ -1,0 +1,56 @@
+body {
+    height: 100vh;
+    padding: 0 14px;
+    background-image: url(../images/marc-wieland-zrj-TPjcRLA-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input,
+button,
+p {
+    padding: 14px !important;
+    border-radius: 20px;
+    transition: .2s;
+}
+
+input,
+button {
+    outline: 0;
+    border: 1px solid transparent !important;
+}
+
+input:focus {
+    border: 1px solid #03658C !important;
+}
+
+p {
+    border: 1px solid #4A808C;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    display: none;
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+p:hover {
+    transform: translateY(-2px);
+    opacity: .7;
+}
+
+p:not(#error) {
+    color: #013440;
+    background-color: #F2F2F0;
+}
+
+#error {
+    color: #013440;
+    background-color: #F2F2F0;
+}
