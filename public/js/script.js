@@ -22,7 +22,7 @@ const weatherFuncion = async () => {
 
     try {
         const address = document.getElementById("address").value
-        const res = await fetch(`http://localhost:3000/weather?address=${address}`)
+        const res = await fetch(`/weather?address=${address}`)
         const data = await res.json()
         console.log(data)
         if (data.error) {
