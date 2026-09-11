@@ -29,6 +29,12 @@ input:focus {
     border: 1px solid #03658C !important;
 }
 
+@media (max-width:567px) {
+    p {
+        font-size:12px ;
+    }
+}
+
 p {
     border: 1px solid #4A808C;
     justify-content: center;
@@ -37,6 +43,7 @@ p {
     display: none;
     text-transform: capitalize;
     cursor: pointer;
+    font-size: 20px;
 }
 
 p:hover {
@@ -47,7 +54,6 @@ p:hover {
 p:not(#error) {
     color: #013440;
     background-color: #F2F2F0;
-    font-size: 20px;
 }
 
 #error {
