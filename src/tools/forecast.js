@@ -15,6 +15,9 @@ const forecast = (latitude, longitude, callback) => {
                     temp: `${response.body.current.temp_c}°c`,
                     lat: response.body.location.lat,
                     lon: response.body.location.lon,
+                    weather: response.body.current.condition.text,
+                    wind: ` ${response.body.current.wind_kph} km/h`,
+                    humidity: ` ${response.body.current.humidity} %`,
                 })
         }
     })

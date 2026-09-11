@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 input,
@@ -53,4 +53,16 @@ p:not(#error) {
 #error {
     color: #013440;
     background-color: #F2F2F0;
+}
+
+::-webkit-scrollbar {
+    border-radius: 8px;
+    width: 6px;
+    background-color: #013440;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #F2F2F0;
+    border-radius: 8px;
+    cursor: pointer;
 }

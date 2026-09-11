@@ -33,9 +33,12 @@ app.get('/weather', (req, res) => {
             }
             res.send({
                 forecast: forecastData.temp,
-                lat:forecastData.lat,
-                lon:forecastData.lon,
-                location: req.query.address
+                lat: forecastData.lat,
+                lon: forecastData.lon,
+                weather: forecastData.weather,
+                wind: forecastData.wind,
+                humidity: forecastData.humidity,
+                location: req.query.address,
             })
         })
     })
