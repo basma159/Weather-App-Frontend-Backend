@@ -31,7 +31,7 @@ input:focus {
 
 @media (max-width:567px) {
     p {
-        font-size:12px ;
+        font-size:12px !important;
     }
 }
 
