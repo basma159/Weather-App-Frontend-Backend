@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/all.css">
+    <link rel="manifest" href="manifest.json">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Weather App</title>
 </head>
@@ -33,6 +34,19 @@
         </div>
     </div>
     <script src="/js/script.js"></script>
+    <script>
+        if("serviceWorker" in navigator){
+            window.addEventListener("load",()=>{
+                navigator.serviceWorker.register('/service-worker.js')
+                .then(()=>{
+                    console.log("Service worker registered successfully")
+                })
+                .catch((error)=>{
+                    console.log("Service worker registration failed:",error)
+                })
+            })
+        }
+    </script>
 </body>
 
 </html>
