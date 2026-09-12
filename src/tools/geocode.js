@@ -1,7 +1,7 @@
 
 const request = require("request")
 const geocode = (address, callback) => {
-    const geocodeUrl = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`
+    const geocodeUrl = `https://nominatim.openstreetmap.org/search?q=${address}&format=json&accept-language=en`
     request({
         url: geocodeUrl, json: true, headers: {
             "User-Agent": "MyWeatherApp/1.0"
@@ -14,10 +14,21 @@ const geocode = (address, callback) => {
             callback("Unable To Find This Location", undefined)
         }
         else {
-            callback(undefined, {
-                latitude: response.body[0].lat,
-                longitude: response.body[0].lon,
-            })
+            const trueCountry = response.body.find(c => c.addresstype == "country")
+            if (trueCountry) {
+                if (address.toLowerCase() == trueCountry.name.toLowerCase()) {
+                    callback(undefined, {
+                        latitude: trueCountry.lat,
+                        longitude: trueCountry.lon,
+                    })
+                }
+                else {
+                    callback("Unable To Find This Location", undefined)
+                }
+            }
+            else {
+                callback("Unable To Find This Location", undefined)
+            }
         }
     })
 }

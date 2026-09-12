@@ -62,9 +62,9 @@ p:not(#error) {
 }
 
 ::-webkit-scrollbar {
-    border-radius: 8px;
+    border-radius: 6px;
     width: 6px;
-    background-color: #013440;
+    /* background-color: #013440; */
 }
 
 ::-webkit-scrollbar-thumb {
